@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,6 @@ namespace ReadlyFetcher
             public string Publication { get; set; }
             public Uri Imageurl { get; set; }
             public string Title { get; set; }
-            public long ShareId { get; set; }
-            public string Description { get; set; }
-            public DateTimeOffset PublishDate { get; set; }
-            public string Issue { get; set; }
-            public long Type { get; set; }
-            public long? ArticleCount { get; set; }
         }
     }
 
@@ -34,7 +29,6 @@ namespace ReadlyFetcher
         {
             public List<Content> Content { get; set; }
             public string Description { get; set; }
-            public long ShareId { get; set; }
         }
 
         public partial class Content
@@ -43,10 +37,9 @@ namespace ReadlyFetcher
             public string Publication { get; set; }
             public Uri Imageurl { get; set; }
             public string Title { get; set; }
-            public DateTimeOffset PublishDate { get; set; }
+            [JsonProperty("publish_date")]
+            public DateTime PublishDate { get; set; }
             public string Issue { get; set; }
-            public long Type { get; set; }
-            public long ShareId { get; set; }
         }
     }
 
@@ -62,17 +55,9 @@ namespace ReadlyFetcher
         public string Publication { get; set; }
         public Uri Imageurl { get; set; }
         public string Title { get; set; }
-        public DateTimeOffset PublishDate { get; set; }
+        [JsonProperty("publish_date")]
+        public DateTime PublishDate { get; set; }
         public string Issue { get; set; }
-        public long Type { get; set; }
-        public long ShareId { get; set; }
-        public string Summary { get; set; }
-        public long PageCount { get; set; }
-        public double PageRatio { get; set; }
-        public long PageOffset { get; set; }
-        public string Country { get; set; }
-        public bool AgeRestricted { get; set; }
-        public long Version { get; set; }
     }
 
 }
