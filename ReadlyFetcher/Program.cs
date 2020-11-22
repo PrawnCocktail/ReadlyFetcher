@@ -215,10 +215,7 @@ namespace ReadlyFetcher
                 {
                     using (StreamWriter w = File.AppendText(title + "\\error.txt"))
                     {
-                        if (supress == false)
-                        {
-                            w.WriteLine("ERROR DOWNLOADING: " + title + " - " + issue);
-                        }
+                        w.WriteLine("ERROR DOWNLOADING: " + title + " - " + issue);
                     }
                     if (supress == false)
                     {
