@@ -184,7 +184,7 @@ namespace ReadlyFetcher
 
         static void getImg(string id, string title, string issue)
         {
-            title = MakeValidFileName(title);
+            title = MakeValidFileName(title).Trim();
             issue = MakeValidFileName(issue);
             Directory.CreateDirectory(title);
 
@@ -265,7 +265,7 @@ namespace ReadlyFetcher
 
         static void GetPDF(string id, string title, string issue)
         {
-            title = MakeValidFileName(title);
+            title = MakeValidFileName(title).Trim();
             issue = MakeValidFileName(issue);
             Directory.CreateDirectory(title);
 
